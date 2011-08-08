@@ -1,0 +1,12 @@
+# Compiled sources
+
+*.com
+*.class
+*.o
+*.so
+
+# IntelliJ Project files
+
+*.iml
+*.iws
+*.ipr

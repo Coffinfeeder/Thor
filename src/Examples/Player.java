@@ -1,8 +1,9 @@
 package Examples;
 
-import Thor.Customizable.Object;
-import Thor.Customizable.Sprite;
+import Thor.Object;
+import Thor.Sprite;
 
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -25,8 +26,19 @@ public class Player extends Object {
         defaultSprite = new Sprite(f.getParent()+"\\assets\\geoffrey_trolling.png");
 
         setSprite(defaultSprite);
-
-        setPosition(100, 100);
+        setPosition(0,0);
     }
 
+    @Override
+    public void keyAction(int keyCode) {
+        if(keyCode == KeyEvent.VK_RIGHT) {
+            setXPos(getXPos() + 4);
+        } else if(keyCode == KeyEvent.VK_LEFT) {
+            setXPos(getXPos() - 4);
+        } else if(keyCode == KeyEvent.VK_UP) {
+            setYPos(getYPos() - 4);
+        } else if(keyCode == KeyEvent.VK_DOWN) {
+            setYPos(getYPos() + 4);
+        }
+    }
 }

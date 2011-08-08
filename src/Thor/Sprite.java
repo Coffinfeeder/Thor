@@ -1,4 +1,4 @@
-package Thor.Customizable;
+package Thor;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

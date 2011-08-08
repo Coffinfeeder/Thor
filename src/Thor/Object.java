@@ -17,6 +17,14 @@ public class Object {
         createAction();
     }
 
+    public int getWidth() {
+        return currentSprite.getWidth();
+    }
+
+    public int getHeight() {
+        return currentSprite.getHeight();
+    }
+
     public int getXPos() {
         return (int)position.getX();
     }

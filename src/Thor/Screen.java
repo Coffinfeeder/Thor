@@ -1,17 +1,16 @@
 package Thor;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Screen extends Canvas {
 
-    private ArrayList<Object> objects;
+    private HashMap<String, Object> objects;
 
     public Screen(int width, int height) {
         setSize(width, height);
-        this.objects = new ArrayList<Object>();
+        this.objects = new HashMap<String, Object>();
     }
 
     public void addNotify() {
@@ -19,18 +18,18 @@ public class Screen extends Canvas {
         createBufferStrategy(2);
     }
 
-    public void addObject(Object object) {
-        this.objects.add(object);
+    public void addObject(String handle, Object object) {
+        this.objects.put(handle, object);
     }
 
     public void paint(Graphics g) {
-        for(Object object : this.objects) {
+        for(Object object : this.objects.values()) {
             object.paintAction(g);
         }
     }
 
     public void keyPressedAction(int keyCode) {
-        for(Object object : this.objects) {
+        for(Object object : this.objects.values()) {
             object.keyPressedAction(keyCode);
         }
 
@@ -38,7 +37,7 @@ public class Screen extends Canvas {
     }
 
     public void keyAction(int keyCode) {
-        for(Object object : this.objects) {
+        for(Object object : this.objects.values()) {
             object.keyAction(keyCode);
         }
 
@@ -47,7 +46,7 @@ public class Screen extends Canvas {
 
     public void keyReleasedAction(int keyCode) {
 
-        for(Object object : this.objects) {
+        for(Object object : this.objects.values()) {
             object.keyReleasedAction(keyCode);
         }
 

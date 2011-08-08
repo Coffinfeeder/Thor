@@ -6,34 +6,38 @@ public class Object {
 
     private Sprite currentSprite;
 
-    private int xpos;
-    private int ypos;
+    private Point position;
+    private Point previousPosition;
 
     public Object() {
-        this.xpos = 0;
-        this.ypos = 0;
+        position = new Point();
+        previousPosition = new Point();
+        position.setLocation(0,0);
+        previousPosition.setLocation(0,0);
         createAction();
     }
 
-    public void setXPos(int x) {
-        this.xpos = x;
-    }
-
     public int getXPos() {
-        return xpos;
-    }
-
-    public void setYPos(int y) {
-        this.ypos = y;
+        return (int)position.getX();
     }
 
     public int getYPos() {
-        return ypos;
+        return (int)position.getY();
+    }
+
+    public void setXPos(int x) {
+        previousPosition.setLocation(getXPos(), getYPos());
+        position.setLocation(x, getYPos());
+    }
+
+    public void setYPos(int y) {
+        previousPosition.setLocation(getXPos(), getYPos());
+        position.setLocation(getXPos(), y);
     }
 
     public void setPosition(int x, int y) {
-        setXPos(x);
-        setYPos(y);
+        previousPosition.setLocation(getXPos(), getYPos());
+        position.setLocation(x, y);
     }
 
     public void setSprite(Sprite sprite) {
@@ -55,6 +59,6 @@ public class Object {
     }
 
     public void paintAction(Graphics g) {
-        g.drawImage(this.currentSprite.getImage(), this.xpos, this.ypos, null);
+        g.drawImage(this.currentSprite.getImage(), getXPos(), getYPos(), null);
     }
 }

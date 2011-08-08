@@ -3,7 +3,6 @@ package Thor;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Game extends JFrame implements KeyListener {

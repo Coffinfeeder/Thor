@@ -11,7 +11,7 @@ class Runner {
         player.setPosition(50, 50);
 
         Screen screen = new Screen(400, 400);
-        screen.addObject(player);
+        screen.addObject("player", player);
         Game game = new Game(screen);
         game.start();
     }

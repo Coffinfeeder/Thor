@@ -32,13 +32,13 @@ public class Player extends Object {
     @Override
     public void keyAction(int keyCode) {
         if(keyCode == KeyEvent.VK_RIGHT) {
-            setXPos(getXPos() + 4);
+            setXPos(getXPos() + 10);
         } else if(keyCode == KeyEvent.VK_LEFT) {
-            setXPos(getXPos() - 4);
+            setXPos(getXPos() - 10);
         } else if(keyCode == KeyEvent.VK_UP) {
-            setYPos(getYPos() - 4);
+            setYPos(getYPos() - 10);
         } else if(keyCode == KeyEvent.VK_DOWN) {
-            setYPos(getYPos() + 4);
+            setYPos(getYPos() + 10);
         }
     }
 }

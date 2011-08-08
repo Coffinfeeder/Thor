@@ -29,26 +29,26 @@ public class Screen extends Canvas {
         }
     }
 
-    public void keyPressedAction(KeyEvent e) {
+    public void keyPressedAction(int keyCode) {
         for(Object object : this.objects) {
-            object.keyPressedAction(e.getKeyCode());
+            object.keyPressedAction(keyCode);
         }
 
         repaint();
     }
 
-    public void keyAction(KeyEvent e) {
+    public void keyAction(int keyCode) {
         for(Object object : this.objects) {
-            object.keyAction(e.getKeyCode());
+            object.keyAction(keyCode);
         }
 
         repaint();
     }
 
-    public void keyReleasedAction(KeyEvent e) {
+    public void keyReleasedAction(int keyCode) {
 
         for(Object object : this.objects) {
-            object.keyReleasedAction(e.getKeyCode());
+            object.keyReleasedAction(keyCode);
         }
 
         repaint();

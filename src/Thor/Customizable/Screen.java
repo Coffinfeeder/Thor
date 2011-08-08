@@ -1,11 +1,15 @@
 package Thor.Customizable;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Screen extends Canvas {
 
+    private ArrayList<Object> objects;
+
     public Screen(int width, int height) {
         setSize(width, height);
+        this.objects = new ArrayList<Object>();
     }
 
     public void addNotify() {
@@ -13,7 +17,13 @@ public class Screen extends Canvas {
         createBufferStrategy(2);
     }
 
+    public void addObject(Object object) {
+        this.objects.add(object);
+    }
+
     public void paint(Graphics g) {
-        g.drawRect(10,10, 240, 120);
+        for(Object object : this.objects) {
+            object.paintAction(g);
+        }
     }
 }

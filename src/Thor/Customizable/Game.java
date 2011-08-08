@@ -12,6 +12,9 @@ public class Game extends JFrame {
         super("HackSlash");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         add(initialScreen);
+    }
+
+    public void start() {
         pack();
         setVisible(true);
     }

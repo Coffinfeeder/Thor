@@ -66,6 +66,10 @@ public class Object {
     public void keyReleasedAction(int keyCode) {
     }
 
+    public void gameTickAction() {
+
+    }
+
     public void paintAction(Graphics g) {
         g.drawImage(this.currentSprite.getImage(), getXPos(), getYPos(), null);
     }

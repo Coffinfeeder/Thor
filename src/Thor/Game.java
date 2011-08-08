@@ -6,8 +6,13 @@ import java.awt.event.KeyListener;
 import java.util.HashMap;
 
 public class Game extends JFrame implements KeyListener {
+
     private Screen currentScreen;
     private HashMap<Integer, Boolean> keyStates = new HashMap<Integer, Boolean>();
+    private int gameSpeed = 30;
+    private boolean quitSignalReceived = false;
+
+    private int tickCounter = 0;
 
     public Game(Screen initialScreen) {
         super("HackSlash");
@@ -20,6 +25,19 @@ public class Game extends JFrame implements KeyListener {
     public void start() {
         pack();
         setVisible(true);
+
+        do {
+            gameLoop();
+        } while(!quitSignalReceived);
+    }
+
+    public void gameLoop() {
+        tickCounter++;
+
+        if(tickCounter == gameSpeed) {
+            currentScreen.gameTick();
+            tickCounter = 0;
+        }
     }
 
     public void keyTyped(KeyEvent e) {

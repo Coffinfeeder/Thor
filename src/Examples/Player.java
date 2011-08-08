@@ -45,4 +45,7 @@ public class Player extends Object {
             setSprite(down);
         }
     }
+
+    public void gameTickAction() {
+    }
 }

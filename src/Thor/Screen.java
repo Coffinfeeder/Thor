@@ -22,6 +22,12 @@ public class Screen extends Canvas {
         this.objects.put(handle, object);
     }
 
+    public void gameTick() {
+         for(Object object : this.objects.values()) {
+            object.gameTickAction();
+        }
+    }
+
     public void paint(Graphics g) {
         for(Object object : this.objects.values()) {
             object.paintAction(g);

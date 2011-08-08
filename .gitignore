@@ -5,8 +5,9 @@
 *.o
 *.so
 
-# IntelliJ Project files
+# IntelliJ Project files / folders
 
 *.iml
 *.iws
 *.ipr
+.idea*

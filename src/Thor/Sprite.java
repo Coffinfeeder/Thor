@@ -1,19 +1,16 @@
 package Thor;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.io.IOException;
 
 public class Sprite {
     private BufferedImage image;
 
-    public Sprite(String path) {
-        try {
-            this.image = ImageIO.read(new FileInputStream(path));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public Sprite(BufferedImage image) {
+        this.image = image;
+    }
+
+    protected void setImage(BufferedImage image) {
+        this.image = image;
     }
 
     protected BufferedImage getImage() {
